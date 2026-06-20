@@ -67,3 +67,5 @@ jobs:
       run: |
         docker push \
         660201001952.dkr.ecr.us-east-1.amazonaws.com/payment-service:${{ github.sha }}
+
+        
