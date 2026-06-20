@@ -81,3 +81,6 @@ jobs:
         ignore-unfixed: true
         severity: HIGH,CRITICAL
         
+    - name: Deploy
+      run: |
+        echo Deploying to AWS...  
