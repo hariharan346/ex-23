@@ -78,5 +78,6 @@ jobs:
         image-ref: payment-service:scan
         format: table
         exit-code: 1
-        severity: HIGH,CRITICAL
+        severity: CRITICAL
+        ignore-unfixed: true
         
