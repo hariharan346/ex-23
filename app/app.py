@@ -1,12 +1,9 @@
-from fastapi import FastAPI
+from fastapi.testclient import TestClient
+from main import app   # instead of: from app import app
 
-app = FastAPI()
+client = TestClient(app)
 
-@app.get("/")
-def home():
-<<<<<<< HEAD
-    return {"status": "healthy-v2"}
-=======
-    return {"status": "healthy"}
->>>>>>> 991618368070d0a36e5dadcddd0e81572c187222
-    
+def test_home():
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"status": "healthy"}
