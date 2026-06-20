@@ -4,5 +4,5 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"status": "healthy"}
+    return {"status": "v2"}
     
