@@ -68,4 +68,15 @@ jobs:
         docker push \
         660201001952.dkr.ecr.us-east-1.amazonaws.com/payment-service:${{ github.sha }}
 
+    - name: Build Image For Scan
+      run: |
+        docker build -t payment-service:scan ./app
+
+    - name: Run Trivy Scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: payment-service:scan
+        format: table
+        exit-code: 1
+        severity: HIGH,CRITICAL
         
